@@ -1,0 +1,46 @@
+{% extends "Data Owners Home.html" %}
+{% block content %}
+<header class="masthead">
+    <div class="row h-100 align-items-center justify-content-center text-center">
+        <h1 style="color:white">Data Encryption And Sharing </h1><br><br>
+        <br>
+        <br>
+        <form action="{{ url_for('DataOwnersUploadFiles') }}" method="post" enctype="multipart/form-data" style="
+        margin-left: 210px;
+    ">
+            {% if msg=="success" %}
+            <h2 style="color:red">{{ files }},Uploaded Successfully</h2><br><br>
+            {% endif %}
+            <h2 style="color:pink">Upload .txt,image,audio & video Files To Encrypt</h2>
+            <h2 style="color:pink">Upload Files</h2>
+            <table style="color:white" align="center">
+
+                <tr>
+                    <select name="dataowner" class="form-control" style="
+                        width: 426px;
+                        margin-left: 140px;
+                    ">
+
+                        <option>Select Receiver</option>
+                        {% for id,name,email,num,gender,address,otp in all_dataowners %}
+
+                        <option value="{{email}}">{{email}}</option>
+
+                        {% endfor %}
+
+                    </select>
+                </tr>
+
+                <tr>
+                    <td>File Report:</td>
+                    <td><input type="file" name="Files" class="form-control"></td>
+                </tr>
+
+            </table>
+            <br> <input type="submit" value="Submit">
+        </form>
+        <div class="col-lg-10 align-self-end"></div>
+        <div class="col-lg-8 align-self-baseline"></div>
+    </div>
+</header>
+{% endblock %}

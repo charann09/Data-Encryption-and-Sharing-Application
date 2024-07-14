@@ -1,0 +1,25 @@
+{% extends "Data Owners Home.html" %}
+{% block content %}
+<header class="masthead">
+    <div class="row h-100 align-items-center justify-content-center text-center">
+        <h1 style="color:white">Data Encryption And Sharing </h1>
+        <table border="" style="color:white">
+            <tr>
+                {% for col in col_name %}
+                <th style="color:pink">{{ col }}</th>
+                {% endfor %}
+            </tr>
+            {% for row in row_val %}
+            <tr>
+                {% for v in row %}
+                <td>{{ v }}</td>
+                {% endfor %}
+            </tr>
+
+            {% endfor %}
+        </table>
+        <div class="col-lg-10 align-self-end"></div>
+        <div class="col-lg-8 align-self-baseline"></div>
+    </div>
+</header>
+{% endblock %}

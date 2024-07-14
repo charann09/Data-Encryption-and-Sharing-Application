@@ -1,0 +1,12 @@
+Changes in GoPool
+
+EmailUpdateFragment - change email without checking for existing one
+
+change - materialswithc
+
+Replace with androidx    implementation 'com.takisoft.fix:preference-v7:25.4.0.3'
+
+
+Register Error: Authentication Failed : After step 4 - but user signed up in firebase
+
+User details not uplaoding to database.

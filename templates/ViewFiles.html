@@ -1,0 +1,57 @@
+{% extends "Data Owners Home.html" %}
+{% block content %}
+<header class="masthead">
+    <div class="row h-50 align-items-center justify-content-center text-center">
+        <h1 style="color:white">Data Encryption And Sharing </h1>
+        {% if type=="audio" %}
+        <div class="card" style="width: 18rem;">
+            <audio controls>
+                <source src="{{filepath}}" class="card-img-top" type="audio/mp3">
+            </audio>
+
+        </div>
+        {% elif type=="video" %}
+        <video width="640" height="360" controls>
+            <source src="{{filepath}}" type="video/mp4">
+            Your browser does not support the video element.
+        </video>
+        {% elif type=="text" %}
+
+
+
+        <div class="row">
+            <div class="col-lg-9 col-md-12 col-sm-12">
+                <fieldset>
+                    <textarea cols="50" rows="10" id="source" style="width: 506px;height: 206px;"
+                        readonly>{{ data }}</textarea>
+                </fieldset>
+
+                <fieldset style="width: 580px;">
+                    <button type="button" id="save" class="btn btn-success" title="Save as text file">Download</button>
+                </fieldset>
+            </div>
+
+        </div>
+        {% else %}
+        <img src="/static/images/image/{{filename}}" style="height:10rem;width:10rem;" alt="No Image">
+
+
+
+        {% endif %}
+    </div>
+    <script type="text/javascript">
+        // when document is ready
+        document.getElementById("save").onclick = function () {
+            // when clicked the button
+            var content = document.getElementById('source').value;
+            // a [save as] dialog will be shown
+            window.open("data:application/txt," + encodeURIComponent(content), "_self");
+        }
+    </script>
+</header>
+
+
+
+
+
+{% endblock %}

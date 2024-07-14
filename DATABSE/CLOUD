@@ -1,0 +1,56 @@
+/*
+SQLyog Enterprise - MySQL GUI v6.56
+MySQL - 5.5.5-10.4.28-MariaDB : Database - cloud
+*********************************************************************
+*/
+
+
+/*!40101 SET NAMES utf8 */;
+
+/*!40101 SET SQL_MODE=''*/;
+
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`cloud` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
+
+USE `cloud`;
+
+/*Table structure for table `dataowners` */
+
+DROP TABLE IF EXISTS `dataowners`;
+
+CREATE TABLE `dataowners` (
+  `slno` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `Name` varchar(100) DEFAULT NULL,
+  `Email` varchar(30) DEFAULT NULL,
+  `Number` int(20) DEFAULT NULL,
+  `Gender` varchar(30) DEFAULT NULL,
+  `Address` varchar(100) DEFAULT NULL,
+  `Otp` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`slno`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `dataowners` */
+
+insert  into `dataowners`(`slno`,`Name`,`Email`,`Number`,`Gender`,`Address`,`Otp`) values (1,'preethi','preethi@gmail.com',2147483647,'Female','Chennai','306488'),(2,'vishnu','vishnu@gmail.com',2147483647,'Male','tirupati','447864');
+
+/*Table structure for table `filesupload` */
+
+DROP TABLE IF EXISTS `filesupload`;
+
+CREATE TABLE `filesupload` (
+  `Sl_No` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `owneremail` varchar(100) DEFAULT NULL,
+  `FileName` varchar(100) DEFAULT NULL,
+  `receiver` varchar(100) DEFAULT NULL,
+  `Files` longblob DEFAULT NULL,
+  `path` varchar(200) DEFAULT NULL,
+  `randomkey` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`Sl_No`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `filesupload` */
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
